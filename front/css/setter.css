@@ -1,0 +1,160 @@
+/*初始化所有值*/
+html, body, div, span, applet, object,
+iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, abbr, acronym, address, big, cite,
+code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b,
+u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby,
+section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    font-family: 幼圆, serif;
+}
+
+/*设置网页初始比例*/
+html {
+    zoom: 100%;
+}
+
+/*设置动画*/
+#all {
+    animation: show 1.5s;
+}
+
+/*设置图片不可拖动*/
+img {
+    -webkit-user-drag: none;
+}
+
+/*图片居中*/
+#yinyang {
+    position: absolute;
+    left: 41.2%;
+    animation: rotate 1.5s;
+    transform-origin: center;
+    animation-fill-mode: forwards;
+    z-index: -1;
+}
+
+/*动画*/
+@keyframes rotate {
+    0% {
+        top: 0;
+        rotate: 0;
+        scale: 100%;
+    }
+
+    25% {
+        top: 35%;
+        rotate: 200deg;
+        scale: 100%;
+    }
+
+    100% {
+        top: 35%;
+        rotate: 1000deg;
+        scale: 0;
+    }
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/*设置背景颜色*/
+body {
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+}
+
+#pattern {
+    margin-top: 32px;
+    font-size: 23px;
+    font-weight: bolder;
+    color: green;
+    text-align: center;
+}
+
+/*设置棋盘居中*/
+#image {
+    margin: 0 auto;
+    text-align: center;
+}
+
+/*单选间距*/
+#med {
+    margin-right: 40px;
+}
+
+/*单选间距*/
+#lef {
+    margin-right: 40px;
+}
+
+#submit {
+    margin-right: 40px;
+}
+
+/*设置按钮样式*/
+button {
+    font-size: 24px;
+    font-weight: bolder;
+    background-color: #FFDEE9;
+    background-image: linear-gradient(129deg, #FFDEE9 0%, #B5FFFC 100%);
+    color: black;
+    border-radius: 10px;
+}
+
+/*设置按钮悬浮时样式*/
+button:hover {
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+
+/* 定义单选框边框 */
+.radio-item .radio {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #999;
+    border-radius: 50%;
+}
+
+.radio-item input:checked + .radio {
+    /*更改单选框选中颜色*/
+    border-color: #008c8c;
+}
+
+.radio-item input:checked + .radio::after {
+    /*在选中单选框里面添加一个小圆心*/
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #008c8c;
+    margin-top: 3px;
+    margin-left: 3px;
+}
+
+.radio-item input:checked ~ span {
+    /*将文字颜色变成定义颜色*/
+    color: blue;
+}
+
+.radio-item input[type="radio"] {
+    /*隐藏单选框*/
+    display: none;
+}
